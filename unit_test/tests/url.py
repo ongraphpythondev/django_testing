@@ -10,5 +10,5 @@ class TestUrls(SimpleTestCase):
 
 
     def test_detail(self):
-        url = reverse('single_post' , args = ['some-slug'])
+        url = reverse('single_post' , kwargs={'s': "corona"} )
         self.assertEqual(resolve(url).func , single_post)

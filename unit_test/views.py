@@ -9,7 +9,14 @@ def home(request):
     return render(request , "unit_test/index.html" , {"posts": all_posts})
 
 
-def single_post(request , post):
+def single_post(request , s):
 
-    post = get_object_or_404(Post , slug = post)
-    return render(request , "unit_test/detail.html" , {"post": post})
+    post = get_object_or_404(Post , title = s)
+    return render(request , "unit_test/detail.html" )
+
+
+
+def single_dj(request , s):
+
+    post = get_object_or_404(Post , title = s)
+    return render(request , "unit_test/detail.html" )
